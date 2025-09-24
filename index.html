@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS1102 Project Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #3498db;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card.featured {
+            border-left-color: #e74c3c;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .project-description {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .project-features li {
+            padding: 5px 0;
+            color: #34495e;
+        }
+
+        .project-features li::before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .project-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .project-button.featured {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+
+        .project-button.featured:hover {
+            box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #ecf0f1;
+            color: #7f8c8d;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 CS1102 Project Hub</h1>
+            <p>Student ID: 23f3000142 | Course Projects & Applications</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Featured Project: Mental Health Aftercare -->
+            <div class="project-card featured">
+                <div class="badge">NEW PROJECT</div>
+                <div class="project-icon">🏥</div>
+                <div class="project-title">Mental Health Aftercare System</div>
+                <div class="project-description">
+                    A comprehensive web-based aftercare monitoring system for mental health patients and their families post-discharge.
+                </div>
+                <ul class="project-features">
+                    <li>Daily checklist for sleep, exercise, and medication tracking</li>
+                    <li>Interactive rating system for mood and wellbeing</li>
+                    <li>Progress monitoring with visual feedback</li>
+                    <li>Data persistence for healthcare provider review</li>
+                    <li>Mobile-responsive design for easy access</li>
+                </ul>
+                <a href="mental-health-aftercare.html" class="project-button featured">🚀 Launch Aftercare System</a>
+            </div>
+
+            <!-- Additional Projects -->
+            <div class="project-card">
+                <div class="project-icon">💌</div>
+                <div class="project-title">Digital Letter Collection</div>
+                <div class="project-description">
+                    A collection of beautifully designed digital letters with interactive features and animations.
+                </div>
+                <ul class="project-features">
+                    <li>Multiple letter templates and designs</li>
+                    <li>Animated CSS effects and transitions</li>
+                    <li>Responsive layout for all devices</li>
+                    <li>Photo gallery integration</li>
+                </ul>
+                <a href="sorry-letter-final.html" class="project-button">📖 View Letter Collection</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Course:</strong> CS1102 - Web Development</p>
+            <p><strong>Academic Year:</strong> 2023-2024</p>
+            <p>This project hub showcases various web development assignments and personal projects.</p>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate project cards on load
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 200);
+            });
+
+            // Add click tracking for analytics (placeholder)
+            document.querySelectorAll('.project-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log(`Project accessed: ${this.textContent}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
