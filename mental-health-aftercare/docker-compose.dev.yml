@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: mental_health_aftercare
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - aftercare-network
+
+  # Demo page (static HTML for immediate testing)
+  demo:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./demo:/usr/share/nginx/html
+    networks:
+      - aftercare-network
+
+volumes:
+  postgres_data:
+
+networks:
+  aftercare-network:
+    driver: bridge
